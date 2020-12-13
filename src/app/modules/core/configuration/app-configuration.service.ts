@@ -16,7 +16,7 @@ export class AppConfigurationService {
 
     private initConfig(): void {
         this.config = {
-            BaseUrl: '/'
+            BaseUrl: 'adapter'
         };
     }
 }

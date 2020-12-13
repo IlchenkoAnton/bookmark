@@ -1,6 +1,12 @@
-import { Status, TState } from '../../common';
+import { Status, TState } from '@modules/common';
+
 import { IBookmark } from '../core/bookmark.interface';
 
+export const bookmarkFeatureKey: string = 'bookmark';
+
+export interface IBookmarksBaseState {
+    bookmark: IBookmarksState;
+}
 export interface IBookmarksState {
     list?: TState<IBookmark[]>;
 }
@@ -10,7 +16,3 @@ export const initialBookmarkState: IBookmarksState = {
         status: Status.EMPTY
     }
 };
-
-export function getInitialState(): IBookmarksState {
-    return initialBookmarkState;
-}

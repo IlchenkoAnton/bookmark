@@ -1,6 +1,6 @@
+import { TState } from '@modules/common';
 import { Action } from '@ngrx/store';
 
-import { TState } from '../../common';
 import { IBookmark } from '../core/bookmark.interface';
 
 export enum BookmarksActions {

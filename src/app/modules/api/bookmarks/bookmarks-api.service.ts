@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AppConfigurationService } from '@modules/core';
 
-import { AppConfigurationService } from '../../core';
+import { IBookmarksResponse } from './dto/response/bookmarks-response.interface';
 
 @Injectable()
 export class BookmarksApiService {
@@ -10,14 +11,14 @@ export class BookmarksApiService {
 
     constructor(
         private readonly httpClient: HttpClient,
-        private readonly appConfigurationService: AppConfigurationService,
+        readonly appConfigurationService: AppConfigurationService,
     ) {
         this.baseUrl = appConfigurationService.Config.BaseUrl;
     }
 
-    public getList(): Observable<any> {
+    public getList(): Observable<IBookmarksResponse> {
         const path: string = `${this.baseUrl}/list`;
 
-        return this.httpClient.get(path);
+        return this.httpClient.get<IBookmarksResponse>(path);
     }
 }
