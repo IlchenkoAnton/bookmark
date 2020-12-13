@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
-import { NotFoundModule } from './not-found/not-found.module';
 
-const a = NotFoundModule;
+import { MainComponent } from './main.component';
 
 export const appRoutingConfig: Routes = [
     {
@@ -15,6 +14,7 @@ export const appRoutingConfig: Routes = [
     },
     {
         path: 'main',
+        component: MainComponent,
         children: [
             {
                 path: '',
