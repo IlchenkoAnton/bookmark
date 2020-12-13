@@ -1,7 +1,10 @@
 <ng-container *ngIf="Model$ | async as model">
-    <div *bmModelView="model.status">
-        <pre>
-            {{ model | json }}
-        </pre>
-    </div>
+    <ng-container *bmModelView="model.status">
+        <div class="bookmarks">
+            <div class="bookmarks__item"
+                 *ngFor="let item of model.success">
+                <bm-bookmarks-item [Bookmark]="item"></bm-bookmarks-item>
+            </div>
+        </div>
+    </ng-container>
 </ng-container>

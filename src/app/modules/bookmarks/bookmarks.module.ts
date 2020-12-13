@@ -9,6 +9,7 @@ import { BookmarksService } from './core/bookmarks.service';
 import { BookmarksEffects } from './store/bookmarks.effects';
 import { bookmarksReducers } from './store/bookmarks.reducer';
 import { bookmarkFeatureKey } from './store/bookmarks.state';
+import { BookmarksItemComponent } from './ui/bookmarks-item/bookmarks-item.component';
 import { BookmarksListComponent } from './ui/bookmarks-list/bookmarks-list.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BookmarksListComponent } from './ui/bookmarks-list/bookmarks-list.compo
         SharedModule
     ],
     declarations: [
-        BookmarksListComponent
+        BookmarksListComponent,
+        BookmarksItemComponent
     ],
     exports: [
         BookmarksListComponent
