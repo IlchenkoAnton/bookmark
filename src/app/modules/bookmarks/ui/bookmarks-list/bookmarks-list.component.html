@@ -1,5 +1,7 @@
-<div *ngIf="Model$ | async as model">
-    <pre>
-        {{ model | json }}
-    </pre>
-</div>
+<ng-container *ngIf="Model$ | async as model">
+    <div *bmModelView="model.status">
+        <pre>
+            {{ model | json }}
+        </pre>
+    </div>
+</ng-container>
