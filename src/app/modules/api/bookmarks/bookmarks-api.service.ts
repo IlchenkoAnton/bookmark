@@ -7,6 +7,7 @@ import { IBookmarksResponse } from './dto/response/bookmarks-response.interface'
 
 @Injectable()
 export class BookmarksApiService {
+    private endPoint: string = 'bookmarks';
     private baseUrl: string;
 
     constructor(
@@ -17,8 +18,12 @@ export class BookmarksApiService {
     }
 
     public getList(): Observable<IBookmarksResponse> {
-        const path: string = `${this.baseUrl}/list`;
+        const path: string = this.getPath('list');
 
         return this.httpClient.get<IBookmarksResponse>(path);
+    }
+
+    private getPath(url): string {
+        return [ this.baseUrl, this.endPoint, url ].join('/');
     }
 }
